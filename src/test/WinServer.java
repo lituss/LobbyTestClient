@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
+import java.awt.event.ActionListener;
 
 
 public class WinServer {
@@ -100,6 +101,10 @@ public class WinServer {
 		txtPass.setColumns(10);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnLogin.setAction(action);
 		btnLogin.setBounds(10, 585, 89, 23);
 		panel.add(btnLogin);

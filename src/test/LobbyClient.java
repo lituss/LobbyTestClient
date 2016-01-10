@@ -14,7 +14,7 @@ import comunicaComu.Network;
 public class LobbyClient {
 	Client client;
 	IPlayer player;
-	ProxyPlayer proxyPlayer;
+	ProxyLobby proxyLobby;
 	public boolean connected = false;
 
 	public LobbyClient (WinServer winserver) {
@@ -43,9 +43,9 @@ public class LobbyClient {
 		
 
 		// The chat frame contains all the Swing stuff.
-		proxyPlayer = new ProxyPlayer();
+		proxyLobby = new ProxyLobby();
 		// Register the chat frame so the server can call methods on it.
-		new ObjectSpace(client).register(Network.PROXY_PLAYER, proxyPlayer);
+		new ObjectSpace(client).register(Network.PROXY_LOBBY, proxyLobby);
 		// This listener is called when the send button is clicked.
 		/*chatFrame.setSendListener(new Runnable() {
 			public void run () {
